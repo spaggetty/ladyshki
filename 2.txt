@@ -1,0 +1,7 @@
+Какой цвет
+white
+blu
+black
+white
+puple
+red
