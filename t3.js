@@ -1,22 +1,25 @@
-﻿//вообщем то да, получилось что программа берёт не 5 рандомных файлов с вопросом, а просто перемешивает
+﻿//а что если земля не круглая?)
+
+const fs = require('fs');
+var gm = fs.readdirSync('./qest/'); // получаем список файлов в папке
 
 
 var coll=0;
 var arqe = [];
 
-//генерим вопросы с 0 до 5 рандомно
-for (var i = 0; i < 5; i++)
+//мешаем все вопросы из папки и оставляем 5 вопросов
+for (var i = 0; i < gm.length; i++)
   arqe.push(i);
 shuffl(arqe);
-console.log(arqe);
+
+arqe = arqe.slice(0,5);
+//console.log(arqe);
 
 
-
-var fs = require('fs');
 
 for (var b = 0; b < 5; b++)
 {
-var array = fs.readFileSync(arqe[b] + ".txt" , "utf8").toString().split("\n");
+var array = fs.readFileSync("./qest/" + arqe[b] + ".txt" , "utf8").toString().split("\n");
 
 console.log('текст вопроса',array[0]);
 
